@@ -8,43 +8,33 @@ from PIL import Image, ImageDraw  # install Pillow package to use PIL
 
 images = []
 
-# default BFS maze
-a = [
-    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-    [1, 0, 1, 0, 1, 0, 0, 0, 0, 1],
-    [1, 0, 1, 0, 1, 0, 0, 0, 0, 1],
-    [1, 0, 1, 0, 1, 1, 1, 1, 0, 1],
-    [1, 0, 1, 0, 0, 0, 0, 1, 0, 1],
-    [1, 0, 1, 0, 0, 0, 0, 1, 0, 1],
-    [1, 0, 0, 0, 0, 0, 0, 1, 0, 1],
-    [1, 0, 1, 0, 0, 0, 0, 0, 0, 1],
-    [1, 0, 1, 0, 0, 0, 0, 0, 0, 1],
-    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-]
-
-zoom = 20
-borders = 6
-start = 1, 1  # define start point at (1, 1)
-end = 2, 5  # define end point at (2, 5)
-
 """
 your maze --- TO CHANGE FOR YOUR MAZE DESIGN ---
 """
 # your maze --- TO REFER FOR YOUR MAZE DESIGN ---
-# a = [
-#     [1, 1, 1, 1, 1, 1, 1],
-#     [1, 0, 0, 1, 0, 0, 1],
-#     [1, 0, 0, 0, 0, 0, 1],
-#     [1, 0, 0, 0, 1, 0, 1],
-#     [1, 1, 1, 0, 1, 1, 1],
-#     [1, 0, 0, 0, 0, 0, 1],
-#     [1, 1, 1, 1, 1, 1, 1]
-# ]
-#
-# zoom = 20
-# borders = 6
-# start = 1, 5  # define start point at (1, 5)
-# end = 4, 3    # define end point at (4, 3)
+a = [
+    [0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0],
+    [0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+    [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
+    [0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0],
+    [0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0],
+    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+    [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+    [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0],
+    [1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+]
+
+zoom = 50
+borders = 6
+start = 7, 7  # define start point at (7, 7)
+end = 0, 0    # define end point at (0, 0)
 
 """
 DO NOT NEED TO CHANGE THIS SECTION --- START
@@ -151,12 +141,8 @@ DO NOT NEED TO CHANGE THIS SECTION --- END
 print_m(m)
 print(the_path)
 
-# default BFS maze
-images[0].save('maze_sols\default_bfs_sol.gif', save_all=True, append_images=images[1:], optimize=False, duration=1,
-               loop=0)
-
 """
 your maze --- TO CHANGE FOR YOUR MAZE DESIGN ---
 """
-# images[0].save('maze_sols\maze_bfs_sol.gif', save_all=True, append_images=images[1:], optimize=False, duration=1,
-#                loop=0)
+images[0].save('maze_sols\maze_bfs_sol.gif', save_all=True, append_images=images[1:], optimize=False, duration=1,
+               loop=0)
